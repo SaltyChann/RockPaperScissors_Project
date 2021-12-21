@@ -3,12 +3,11 @@ let computerChoice = 'Computer choice is broken';
 let playerChoice = 'Player choice is broken';
 let playerScore = 0;
 let computerScore = 0;
-
+/** ----------------------------------- */
 function playerWin() {
     playerScore = playerScore + 1;
     console.log('You won the round!')
 }
-
 function computerWin() {
     computerScore = computerScore + 1;
     console.log('You lost the round!')
@@ -55,3 +54,18 @@ function playRound() {
     }
     console.log('The current score is... Player: ' + playerScore + ' and Computer: ' + computerScore);
 }
+function playGame() {
+    for (i = 0; i < 5; i++) {
+        playRound();
+    }
+    if (playerScore > computerScore) {
+        console.log('Sheesh you beat the computer!');
+    }
+    else if (playerScore == computerScore) {
+        console.log('Yall tied wtf');
+    }
+    else {
+        console.log('You lose! LOSER!')
+    }
+}
+playGame();
