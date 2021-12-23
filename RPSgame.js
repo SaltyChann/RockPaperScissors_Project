@@ -3,6 +3,7 @@ let computerChoice = 'Computer choice is broken';
 let playerChoice = 'Player choice is broken';
 let playerScore = 0;
 let computerScore = 0;
+let currentRound = 1;
 /** ----------------------------------- */
 function playerWin() {
     playerScore = playerScore + 1;
@@ -27,18 +28,19 @@ function computerSelection() {
 }
 
 function playerSelection() {
-    playerChoice = prompt("What's youre move?");
+    playerChoice = prompt("What's youre move?").toLowerCase();
 }
 
 function playRound() {
     computerSelection();
     playerSelection();
 
+    console.log('The current Round is: Round ' + currentRound);
     console.log('Player has chosen ' + playerChoice);
     console.log('Computer has chosen ' + computerChoice);
 
     if (playerChoice === computerChoice) {
-        console.log("Y'all chose the same move! It's a tie!")
+        console.log("Y'all chose the same move! It's a tie!");
     }
     else if (playerChoice === 'rock' && computerChoice === 'scissors') {
         playerWin();
@@ -55,9 +57,12 @@ function playRound() {
     console.log('The current score is... Player: ' + playerScore + ' and Computer: ' + computerScore);
 }
 function playGame() {
-    for (i = 0; i < 5; i++) {
+        for (currentRound = 1; currentRound < 6; currentRound++) {
         playRound();
     }
+    /* ---- OLD for Loop ( worked ) for (i = 0; i < 5; i++) {
+        playRound();
+    }*/
     if (playerScore > computerScore) {
         console.log('Sheesh you beat the computer!');
     }
@@ -69,3 +74,6 @@ function playGame() {
     }
 }
 playGame();
+
+// Must auto lowercase everything, or capitalize first letter
+// Must make player input be correctly spelled
