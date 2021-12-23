@@ -28,7 +28,7 @@ function computerSelection() {
             computerChoice = 'scissors';
         }
 }
-
+ 
 function playerSelection() {
     playerChoice = prompt("What's youre move?").toLowerCase();
 }
