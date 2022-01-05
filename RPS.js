@@ -42,7 +42,7 @@ function playRound() {
     playerChoice();
 
     if (playerSelection === computerSelection) {
-        console.log('You chose the same answers! Round will restart!')
+        console.log('You chose the same move! Round will restart!')
         currentRound = currentRound - 1;
         playRound();
     }
@@ -61,7 +61,7 @@ function playRound() {
     }
 }
 function tiedGame() {
-    console.log('The game is currently tied... Play one more round for an overtime win!')
+    console.log('The game is currently tied... Next winning move is an overtime victory!')
 
     playRound();
 
