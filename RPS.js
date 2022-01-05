@@ -29,7 +29,7 @@ function playerChoice() {
 
 function playerWin() {
     playerScore = playerScore + 1;
-    console.log(playerSelection + ' beats ' + computerSelection + ' you win the round!');
+    console.log(playerSelection + ' beats ' + computerSelection + ', you win the round!');
 }
 
 function playRound() {
@@ -38,7 +38,7 @@ function playRound() {
     playerChoice();
 
     if (playerSelection === computerSelection) {
-        console.log('You chose the same answers! Restart this play!')
+        console.log('You chose the same answers! Round will restart!')
         playRound();
     }
     else if (computerSelection === 'Rock' && playerSelection === 'Paper') {
@@ -55,14 +55,30 @@ function playRound() {
         console.log('You lost the round... ' + computerSelection + ' beats ' + playerSelection);
     }
 }
+function tiedGame() {
+    console.log('The game is currently tied... Play one more round for an overtime win!')
+    playRound();
+    if (playerScore > computerScore) {
+        console.log('You won during overtime! --- Final Score... Player: ' + playerScore + ' --- Computer: ' + computerScore);
+    }
+    else if (playerScore === computerScore) {
+        tiedGame();
+    }
+    else {
+        console.log('You lost during overtime... Game Over')
+    }
+}
 function Game() {
     for (i=0; i<=3; i++) { // For loop instead of typing playRound 5 times
         playRound();
-        console.log('Current Score is Player: ' + playerScore + ' ---- Computer: ' + computerScore)
+        console.log('Current Score is --- Player: ' + playerScore + ' ---- Computer: ' + computerScore)
     }
     
     if (playerScore > computerScore) {
         console.log('You win the game!')
+    }
+    else if (playerScore === computerScore) {
+        tiedGame();
     }
     else {
         console.log('You lose the game!')
