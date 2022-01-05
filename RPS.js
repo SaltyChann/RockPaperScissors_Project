@@ -21,9 +21,9 @@ function computerChoice() {
 }
 
 function playerChoice() {
-    playerPrompt = prompt('Make a choice: Rock, Paper, or Scissors');
-    let promptNew = playerPrompt.toLowerCase();
-    playerSelection = promptNew.charAt(0).toUpperCase() + promptNew.slice(1);
+    playerPrompt = prompt('Make a choice: Rock, Paper, or Scissors');//Takes user input
+    let promptNew = playerPrompt.toLowerCase();//changes input to all lowercase to be changed later
+    playerSelection = promptNew.charAt(0).toUpperCase() + promptNew.slice(1);//changes the all lowercase and makes first letter uppercase
     return playerSelection;
 }
 
@@ -56,7 +56,7 @@ function playRound() {
     }
 }
 function Game() {
-    for (i=0; i<=5; i++) { // For loop instead of typing playRound 5 times
+    for (i=0; i<=3; i++) { // For loop instead of typing playRound 5 times
         playRound();
         console.log('Current Score is Player: ' + playerScore + ' ---- Computer: ' + computerScore)
     }
