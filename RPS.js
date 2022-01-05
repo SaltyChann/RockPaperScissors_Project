@@ -5,9 +5,12 @@ let playerScore = 0;
 let computerScore = 0;
 let currentRound = 0;
 
+function displayRound() {
+    console.log('Round ' + currentRound);
+}
 function computerChoice() {
     computerSelection = Math.floor(Math.random() * 3 + 1); // Makes computer selection choose randomly 1-3
-    // Makes changes the computers choice to readable moves (Rock, Paper, Scissors)
+    // Changes the computers choice to readable moves (Rock, Paper, Scissors)
     if (computerSelection === 1) {
         computerSelection = 'Rock';
     }
@@ -71,9 +74,6 @@ function tiedGame() {
     else {
         console.log('You lost during overtime... Game Over')
     }
-}
-function displayRound() {
-    console.log('Round ' + currentRound);
 }
 function Game() {
     for (i=0; i<=3; i++) { // For loop instead of typing playRound 5 times
